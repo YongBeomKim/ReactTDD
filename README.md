@@ -1,18 +1,76 @@
 [![License: MIT](https://img.shields.io/github/license/marcelovicentegc/django-react-typescript)](LICENSE)
 ![Build and Test app](https://github.com/marcelovicentegc/django-react-typescript/workflows/Build%20and%20Test%20app/badge.svg)
 
+<br/>
+
+# 3 리액트의 테스트 - JEST
+
+## package.json
+- [bj퍼블릭 GitHub](https://github.com/bjpublic/reactdd)
+- JEST 테스트 함수 : `*.test.js` 를 자동으로 검색 후 실행
+- `index.js`, `index.test.js` 를 활용하여 자동으로 테스트 실행
+
 ```r
 $ yarn add -D typescript @types/react @types/react-dom
 $ yarn add -D web-vitals @types/node @types/jest
+$ yarn add -D @babel/plugin-syntax-jsx
+```
+
+## Matcher
+- [JEST Version: 27.1 Expects](https://jestjs.io/docs/expect)
+```json
+// package.json
+{
+  "scripts": {
+    "test": "jest --watch"
+    // "test": "jest"
+  },
+}
+```
+
+## Code Coverage
+```r
+# 테스트 코드 중 실테 테스트 범위 확인
+$ yarn jest --coverage
+```
+
+# 리액트 테스트 - react-testing-library
+
+## react-testing-library
+- [@testing-library/react](https://www.npmjs.com/package/@testing-library/react)
+- [Testing Library Docs](https://testing-library.com/docs/react-testing-library/setup/)
+- [Testing React Testing Library github](https://github.com/testing-library/react-testing-library)
+- 리액트 컴포넌트를 테스트하는 솔루션
+
+```r
 $ yarn add -D @testing-library/react
 $ yarn add -D @testing-library/jest-dom@
 ```
 
 
+## 
 
-https://github.com/bjpublic/reactdd
+
+
 
 yarn add -D @testing-library/jest-dom@
+
+
+# 스무디 한 잔 마시며 끝내는 리액트+TDD
+
+![MicrosoftTeams-image (6)](https://user-images.githubusercontent.com/21074282/122349943-b63e4180-cf87-11eb-8759-749e5a864f2b.png)
+
+- 부제: 테스트 주도 개발로 리액트 프로젝트 완성하기
+- 저자: 김정헌
+- 출간/배본가능일: 2021년 6월 25일
+- 정가: 32,000원
+- 페이지: 524
+
+
+
+
+
+
 
 
 ```r
