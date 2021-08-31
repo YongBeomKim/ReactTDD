@@ -54,10 +54,17 @@ module.exports = env => {
           },
         },
 
-        // {
-        //   test: /\.css$/i,
-        //   use: ["style-loader", "css-loader"],
-        // },
+        {
+          test: /\.(png|svg)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'images/[name].[ext]?[hash]',
+              }
+            },
+          ],
+        },
 
         {
           test: [/\.css$/, /\.s[ac]ss$/i],

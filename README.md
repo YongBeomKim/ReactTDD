@@ -1,60 +1,59 @@
-[![License: MIT](https://img.shields.io/github/license/marcelovicentegc/django-react-typescript)](LICENSE)
-![Build and Test app](https://github.com/marcelovicentegc/django-react-typescript/workflows/Build%20and%20Test%20app/badge.svg)
+# TypeScript 리액트 개발 환경
+- [TypeScript Declaration for SVG Assets](https://duncanleung.com/typescript-module-declearation-svg-img-assets/)
+- [Using Jest with React and TypeScript](https://www.carlrippon.com/using-jest-and-rtl-with-react-typescript/)
 
 <br/>
 
-# 3 리액트의 테스트 - JEST
-
-## package.json
+# package.json
 - [bj퍼블릭 GitHub](https://github.com/bjpublic/reactdd)
-- JEST 테스트 함수 : `*.test.js` 를 자동으로 검색 후 실행
-- `index.js`, `index.test.js` 를 활용하여 자동으로 테스트 실행
+- [TDD 를 TypeScript 활용하기](https://velog.io/@xortm854/TDD%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90-2%ED%8E%B8TDD-%EC%84%A4%EC%A0%95ReactTypescript#tdd%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0%EC%A0%84-%EC%84%A4%EC%A0%95%EB%B6%80%ED%84%B0-)
 
 ```r
 $ yarn add -D typescript @types/react @types/react-dom
 $ yarn add -D web-vitals @types/node @types/jest
+$ yarn add -D jest jest-cli ts-jest
+$ yarn add -D @testing-library/react
+$ yarn add -D @testing-library/jest-dom@
 $ yarn add -D @babel/plugin-syntax-jsx
 ```
 
-## Matcher
-- [JEST Version: 27.1 Expects](https://jestjs.io/docs/expect)
-```json
-// package.json
-{
-  "scripts": {
-    "test": "jest --watch"
-    // "test": "jest"
-  },
-}
-```
+<br/>
 
-## Code Coverage
+# JEST
+- JEST 테스트 함수 : `*.test.js` 를 자동으로 검색 후 실행
+- `index.js`, `index.test.js` 를 활용하여 자동으로 테스트 실행
+- [.toBeInTheDocument() not a function | setupTest.tsx](https://newbedev.com/react-testing-library-why-is-tobeinthedocument-not-a-function)
+- [JEST cannot load svg file](https://stackoverflow.com/questions/58603201/jest-cannot-load-svg-file)
+- [React Testing | css](https://velog.io/@_woogie/%EC%B2%98%EC%9D%8C%EC%9D%B4%EB%9D%BC-%EC%96%B4%EB%A0%A4%EC%9A%B4-React-Testing#css%EC%98%A4%EB%A5%98-feat%EC%98%88%EC%83%81%EC%B9%98-%EB%AA%BB%ED%95%9C-%EC%A0%90)
+- [How to resolve “Cannot use import statement outside a module” in jest](https://stackoverflow.com/questions/58613492/how-to-resolve-cannot-use-import-statement-outside-a-module-in-jest)
+- [JEST Version: 27.1 Expects](https://jestjs.io/docs/expect)
+
 ```r
 # 테스트 코드 중 실테 테스트 범위 확인
-$ yarn jest --coverage
+$ yarn test --coverage
+ PASS  src/components/__tests__/index.test.js
+----------------------|---------|----------|---------|---------|-------------------
+File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------------|---------|----------|---------|---------|-------------------
+All files             |     100 |      100 |     100 |     100 |                   
+ components/__tests__ |     100 |      100 |     100 |     100 |                   
+  index.js            |     100 |      100 |     100 |     100 |                   
+----------------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 passed, 1 total
+Done in 3.18s.
 ```
 
-# 리액트 테스트 - react-testing-library
+<br/>
 
-## react-testing-library
+# React Testing Library 
 - [@testing-library/react](https://www.npmjs.com/package/@testing-library/react)
 - [Testing Library Docs](https://testing-library.com/docs/react-testing-library/setup/)
 - [Testing React Testing Library github](https://github.com/testing-library/react-testing-library)
-- 리액트 컴포넌트를 테스트하는 솔루션
 
-```r
-$ yarn add -D @testing-library/react
-$ yarn add -D @testing-library/jest-dom@
-```
+<br/>
 
-
-## 
-
-
-
-
-yarn add -D @testing-library/jest-dom@
-
+[![License: MIT](https://img.shields.io/github/license/marcelovicentegc/django-react-typescript)](LICENSE)
+![Build and Test app](https://github.com/marcelovicentegc/django-react-typescript/workflows/Build%20and%20Test%20app/badge.svg)
 
 # 스무디 한 잔 마시며 끝내는 리액트+TDD
 
@@ -65,6 +64,10 @@ yarn add -D @testing-library/jest-dom@
 - 출간/배본가능일: 2021년 6월 25일
 - 정가: 32,000원
 - 페이지: 524
+
+
+
+
 
 
 

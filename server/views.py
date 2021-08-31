@@ -17,9 +17,14 @@ with open(json_file_path, "r") as json_data:
 def json_api(request):
     context = content["days"]
     print(context)
-    return JsonResponse(context, json_dumps_params={"ensure_ascii": False}, safe=False)
+    return JsonResponse(context,
+                        json_dumps_params={"ensure_ascii": False},
+                        safe=False)
 
 
 def json_api_day(request, pk):
     context = [items for items in content["words"] if items["day"] == pk]
-    return JsonResponse(context, json_dumps_params={"ensure_ascii": False}, safe=False)
+    print(context)
+    return JsonResponse(context,
+                        json_dumps_params={"ensure_ascii": False},
+                        safe=False)
