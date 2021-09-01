@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import React from 'react';
-import AppStyles from './style/App-style'
+import AppStyles from './components/style/App-style'
 
 
 const hi = process.env.JS;
@@ -22,7 +22,6 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <AppLink
-          className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer">

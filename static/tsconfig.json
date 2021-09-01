@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "outDir": "./dist",
+    "baseUrl": "src",
+    "outDir": "dist",
     "target": "es6",
     "module": "commonjs",
     "strict": true,
     "allowJs": true,
-    "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "plugins": [
       {
@@ -22,8 +23,8 @@
       }
     ],
     "typeRoots": [
-      "./src/@types",
-      "./node_modules/@types"
+      "src/@types",
+      "node_modules/@types"
     ]
   },
   "include": [

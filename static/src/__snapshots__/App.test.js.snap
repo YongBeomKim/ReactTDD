@@ -3,15 +3,15 @@
 exports[`<App /> renders component correctly 1`] = `
 <div>
   <div
-    class="App"
+    class="sc-bdfBQB dWImOz"
   >
     <header
-      class="App-header"
+      class="sc-gsTEea fIbMId"
     >
       <img
         alt="logo"
-        class="App-logo"
-        src="http://localhost:8000/media/logo.svg"
+        class="sc-dlfnuX cXQzHU"
+        src="[object Object]"
       />
       <p>
         Edit 
@@ -21,7 +21,7 @@ exports[`<App /> renders component correctly 1`] = `
          and save to reload.
       </p>
       <a
-        class="App-link"
+        class="sc-hKgJUU cHcczu App-link"
         href="https://reactjs.org"
         rel="noopener noreferrer"
         target="_blank"
