@@ -1,6 +1,8 @@
 # TypeScript 리액트 개발 환경
 - [TypeScript Declaration for SVG Assets](https://duncanleung.com/typescript-module-declearation-svg-img-assets/)
 - [Using Jest with React and TypeScript](https://www.carlrippon.com/using-jest-and-rtl-with-react-typescript/)
+- [Cannot use JSX unless the '--jsx' flag is provided](https://www.icatpark.com/entry/typescript-Cannot-use-JSX-unless-the-jsx-flag-is-provided)
+- [typed-css-modules](https://www.npmjs.com/package/typed-css-modules)
 
 <br/>
 
@@ -51,6 +53,15 @@ Done in 3.18s.
 - [Testing React Testing Library github](https://github.com/testing-library/react-testing-library)
 
 <br/>
+
+# Styled Component
+- [[React] Styled Components 사용기](https://dkje.github.io/2020/10/13/StyledComponents/)
+- [Syntax Highlighting is default import is `styled` and nothing else](https://github.com/styled-components/vscode-styled-components)
+- vscode 에서 `import styled` 소문자로 불러와야 highlighting and IntelliSense 작동
+
+https://raw.githubusercontent.com/styled-components/vscode-styled-components/master/demo.gif
+
+
 
 [![License: MIT](https://img.shields.io/github/license/marcelovicentegc/django-react-typescript)](LICENSE)
 ![Build and Test app](https://github.com/marcelovicentegc/django-react-typescript/workflows/Build%20and%20Test%20app/badge.svg)

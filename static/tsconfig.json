@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "outDir": "./dist",
     "target": "es6",
     "module": "commonjs",
@@ -10,18 +11,25 @@
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
-    "jsx": "react-jsx",
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin",
+        "tags": [
+          "styled",
+          "css",
+          "sty"
+        ]
+      }
+    ],
     "typeRoots": [
       "./src/@types",
       "./node_modules/@types"
     ]
   },
   "include": [
-    "src",
-    "custom.d.ts"
+    "src"
   ],
   "exclude": [
-    "node_modules",
-    "css"
+    "node_modules"
   ]
 }

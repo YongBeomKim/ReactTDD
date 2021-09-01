@@ -1,0 +1,35 @@
+{
+  "editor.fontSize": 16,
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "window.zoomLevel": 3,
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.colorTheme": "Dracula Soft",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "security.workspace.trust.enabled": false,
+  "sqltools.useNodeRuntime": true,
+  "terminal.integrated.fontSize": 13,
+  "vsicons.dontShowNewVersionMessage": true,
+  "files.autoGuessEncoding": true,
+  "files.associations": {
+    "*.py": "python"
+  },
+  "[javascript]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[css,scss,sass,json]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[html]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+}
