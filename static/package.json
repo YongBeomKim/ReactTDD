@@ -37,6 +37,7 @@
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^6.2.0",
     "dotenv-webpack": "^7.0.2",
+    "error-overlay-webpack-plugin": "^1.0.0",
     "file-loader": "^6.2.0",
     "husky": "^7.0.2",
     "identity-obj-proxy": "^3.0.0",

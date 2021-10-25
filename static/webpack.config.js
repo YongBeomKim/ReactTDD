@@ -1,6 +1,7 @@
 const path = require('path');
 const mode = process.env.NODE_ENV || 'development';
 const Dotenv = require('dotenv-webpack');
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin')
 const {
   CleanWebpackPlugin
 } = require('clean-webpack-plugin');
@@ -9,7 +10,6 @@ const {
 module.exports = env => {
   return {
     mode: "development",
-    devtool: 'cheap-module-source-map',
     entry: {
       index: path.join(__dirname, 'src', 'index.tsx'),
     },
@@ -17,25 +17,30 @@ module.exports = env => {
       filename: '[name].js',
       path: path.resolve(__dirname, 'dist'),
     },
+    plugins: [
+      new Dotenv(),
+      new CleanWebpackPlugin(),
+      new ErrorOverlayPlugin(),
+    ],
+    devtool: 'cheap-module-source-map',
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
     devServer: {
       port: 3000,
       hot: true,
-      overlay: true,
-      disableHostCheck: true,
+      overlay: {
+        errors: true,
+        warnings: true
+      },
+      //overlay: true,
+      //disableHostCheck: true,
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
         "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
       }
     },
-    plugins: [
-      new Dotenv(),
-      new CleanWebpackPlugin(),
-    ],
-
     module: {
       rules: [
         {
@@ -54,17 +59,10 @@ module.exports = env => {
           },
         },
 
-        {
-          test: /\.(png|svg)$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: 'images/[name].[ext]?[hash]',
-              }
-            },
-          ],
-        },
+        // {
+        //   test: /\.css$/i,
+        //   use: ["style-loader", "css-loader"],
+        // },
 
         {
           test: [/\.css$/, /\.s[ac]ss$/i],
