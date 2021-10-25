@@ -11,7 +11,7 @@ const InputBox = Styled.input`
 `
 
 interface Props {
-  readonly placeholder? :string;
+  readonly placeholder?: string;
   readonly value?: string;
   readonly onChange?: (text: string) => void;
 }
@@ -19,10 +19,14 @@ interface Props {
 
 export const Input = ({placeholder, value, onChange}: Props) => {
   return (
-    <InputBox 
-      placeholder={placeholder}
+    <InputBox
       value={value}
-      onChange={(event) => console.log(event?.target.value)}
+      placeholder={placeholder}
+      onChange={(event) => {
+        if(typeof onChange == 'function') {
+          onChange(event.target.value);
+        }
+      }}
     />
   )
 }

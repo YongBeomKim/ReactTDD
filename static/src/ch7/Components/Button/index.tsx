@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Styled from "styled-components";
 
 
@@ -35,23 +35,24 @@ interface Props {
   readonly onClick?: () => void;
 }
 
+// this.props : Props 속성들을 구조분해 할당
+export class Button extends Component<Props> {
+  render() {
+    const {
+      label,
+      backgroundColor = '#304FFE',
+      hoverColor = '#1E4oFF',
+      onClick,
+    } = this.props; 
 
-// Props : 부모에게 전달받는 모든 데이터 컨트롤 매개변수
-// JavaScript 구조분해 할당을 활용하여 데이터를 전달 받는다
-export const Button = ({
-  label,
-  backgroundColor = '#304FFE',
-  hoverColor = '#1E40FF',
-  onClick,
-}: Props) => {
-  return (
-    <Container 
-      backgroundColor = {backgroundColor}
-      hoverColor = {hoverColor}
-      onClick = {onClick}
-    >
-      <Label>{label}</Label>
-    </Container>
-
-  )
+    return (
+      <Container
+        backgroundColor={backgroundColor}
+        hoverColor={hoverColor}
+        onClick={onClick}
+      >
+        <Label>{label}</Label>
+      </Container>
+    );
+  }
 }

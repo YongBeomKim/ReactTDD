@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Styled from 'styled-components';
+import { Button, Input, TodoItem } from './Components';
+
 
 const test = process.env.HELLO
 const Container = Styled.div`
@@ -13,6 +15,7 @@ const Container = Styled.div`
   /* Style */
   background-color: #EEEEEE;
 `;
+
 
 const Contents = Styled.div`
   display: flex;
@@ -28,22 +31,56 @@ const InputContainer = Styled.div`
   display: flex;
 `
 
-import { Button, Input } from './Components';
+
+const ToDoContainer = Styled.div`
+  min-width: 350px;
+  height: 400px;
+  overflow-y: scroll;
+  border: 1px solid #BDBDBD;
+  margin-bottom: 20px;
+`
+
 
 export default function App() {
+  const [toDo, setToDo] = useState('');
+  const [toDoList, setToDoList] = useState<string[]>([]);
+
+  const addToDo = (): void => {
+    if (toDo) {
+      setToDoList([...toDoList, toDo]);
+      setToDo('');
+    }
+  }
+
+  const deleteToDo = (index:number): void => {
+    let list = [...toDoList];
+    list.splice(index, 1);
+    setToDoList(list);
+  }
+
   console.log(test);
   return (
     <>
       <Container>
         <Contents>
+          <ToDoContainer>
+            {toDoList.map( (item, index) =>
+              <TodoItem 
+                key={item} 
+                label={item} 
+                onDelete={ () => deleteToDo(index) }
+              />
+            )}
+          </ToDoContainer>
           <InputContainer>
             <Input
               placeholder="할 일을 입력해 주세요"
+              value={toDo}
+              onChange={(text) => setToDo(text)}
             />
-
             <Button 
               label="리액트"
-              onClick={()=>alert('Django')}
+              onClick={addToDo}
             />
           </InputContainer>
         </Contents>
