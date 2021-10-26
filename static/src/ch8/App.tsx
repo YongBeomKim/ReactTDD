@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Styled from 'styled-components';
-import { ToDoList, InputContainer } from './Components';
+import { InputContainer, ToDoList } from './Components';
+import { ToDoListProvider } from './Contexts';
 
 
 const Container = Styled.div`
@@ -50,19 +51,14 @@ export default function App() {
   };
   
   return(
-    <Container>
-      <Contents>
-        <ToDoList
-          toDoList={toDoList}
-          deleteToDo={deleteToDo}
-        />
-        <InputContainer
-          toDo={toDo} // Input Text
-          onChange={(text) => setToDo(text)} // text:String 전달
-          onAdd={addToDo}
-        />
-      </Contents>
-    </Container>
+    <ToDoListProvider>
+      <Container>
+        <Contents>
+          <ToDoList />
+          <InputContainer />
+        </Contents>
+      </Container>
+    </ToDoListProvider>
   )
 }
 

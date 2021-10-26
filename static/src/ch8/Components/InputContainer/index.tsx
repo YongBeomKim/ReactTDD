@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import Styled from "styled-components";
+import { ToDoListContext } from "../../Contexts";
 import { Button } from "../Button";
 import { Input } from "../Input";
 
@@ -9,23 +10,24 @@ const Container = Styled.div`
   display: flex;
 `;
 
-interface Props {
-  readonly toDo?: string;
-  readonly onChange?: (text: string) => void;
-  readonly onAdd?: () => void;
-}
 
-export const InputContainer = ({toDo, onChange, onAdd}: Props) => {
+export const InputContainer = () => {
+  const [toDo, setToDo] = useState('');
+  const { addToDo} = useContext(ToDoListContext);
+  
   return(
     <Container>
       <Input
         placeholder="Insert To do."
         value={toDo}
-        onChange={onChange}
+        onChange={setToDo}
       />
       <Button 
         label="Add"
-        onClick={onAdd}
+        onClick={() => {
+          addToDo(toDo);
+          setToDo('');
+        }}
       />
     </Container>
   )
