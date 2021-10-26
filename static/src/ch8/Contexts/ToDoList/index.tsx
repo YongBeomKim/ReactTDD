@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 
 // JSX.Element :: JSX 결과 타입 (ReactElement)
@@ -29,15 +29,28 @@ const ToDoListProvider = ({children}: Props): JSX.Element => {
   const [toDoList, setToDoList] = useState<string[]>([]);
   const addToDo = (toDo: string): void => {
     if (toDo) {
-      setToDoList([...toDoList, toDo]);
+      const newList = [...toDoList, toDo];
+      localStorage.setItem('ToDoList', JSON.stringify(newList))
+      setToDoList(newList);
+      console.log(toDo, toDoList);
     }
   };
 
   const deleteToDo = (index: number): void => {
     let list = [...toDoList];
     list.splice(index, 1);    // 특정 인덱스에서 1개 삭제
+    localStorage.setItem('ToDoList', JSON.stringify(list));
     setToDoList(list);
   };
+
+  // useEffect :: componentDidMount 와 동일한 역활을 수행
+  // localStorage :: String 데이터 저장, 객체 변환시 JSON 인코딩 필요
+  useEffect(() => {
+    const list = localStorage.getItem('ToDoList');
+    if (list) {
+      setToDoList(JSON.parse(list));
+    }
+  }, []); // [] : initial value
 
   return(
     // Provider :: Context 자손에게 제공
