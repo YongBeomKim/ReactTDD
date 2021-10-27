@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Styled from 'styled-components';
+import { Switch, Route } from 'react-router-dom'
 import { InputContainer, ToDoList } from './Components';
 import { ToDoListProvider } from './Contexts';
 
@@ -35,5 +36,3 @@ export default function App() {
     </ToDoListProvider>
   )
 }
-
-

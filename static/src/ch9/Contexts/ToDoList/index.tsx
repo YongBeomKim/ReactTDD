@@ -2,7 +2,6 @@ import React, { createContext, useState, useEffect } from "react";
 
 
 // JSX.Element :: JSX 결과 타입 (ReactElement)
-// https://www.typescriptlang.org/ko/docs/handbook/jsx.html
 interface Props {
   children: JSX.Element | JSX.Element[];
 }
@@ -14,9 +13,7 @@ interface Context {
 }
 
 
-// Context :: props 로 넘기지 않고 컴포넌트 전체에 데이터 제공
-// Context 로 독립된 React Components 로써 Props, State 를 전달 받는다
-// https://ko.reactjs.org/docs/context.html
+// Context 도 Components 로써 Props, State 활용
 const ToDoListContext = createContext<Context>({
   toDoList: [],
   addToDo: ():void => {},
@@ -43,8 +40,8 @@ const ToDoListProvider = ({children}: Props): JSX.Element => {
     setToDoList(list);
   };
 
-  // useEffect :: componentDidMount 와 동일한 역활을 수행
-  // localStorage :: String 데이터 저장, 객체 변환시 JSON 인코딩 필요
+  // useEffect :: componentDidMount 와 componentDidUpdate
+  // localStorage :: String 데이터로 JSON 인코딩 필요
   useEffect(() => {
     const list = localStorage.getItem('ToDoList');
     if (list) {

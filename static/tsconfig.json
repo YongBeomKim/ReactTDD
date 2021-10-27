@@ -17,9 +17,17 @@
         "name": "typescript-styled-plugin",
         "tags": [
           "styled",
+          "div",
           "css",
-          "sty"
-        ]
+          "scss",
+          "sass",
+          "sty",
+          "(Link)"
+        ],
+        "lint": {
+          "vendorPrefix": "error",
+          "zeroUnits": "ignore"
+        }
       }
     ],
     "typeRoots": [

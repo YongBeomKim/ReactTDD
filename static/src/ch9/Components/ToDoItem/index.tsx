@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { Button } from '../Button';
+
 
 const Container = Styled.div`
   display: flex;
@@ -9,30 +11,31 @@ const Container = Styled.div`
   margin: 10px;
   padding: 10px;
 `
-const Label = Styled.div`
+const Label = Styled(Link)`
   flex: 1;
   font-size: 16px;
   margin-right: 20px;
+  text-decoration: none;
 `
 
 interface Props {
+  readonly id: number;
   readonly label: string;
   readonly onDelete?:() => void;
 }
 
-export class ToDoItem extends Component<Props>{
-  render() {
-    const {label, onDelete} = this.props;
-    return (
-      <Container>
-        <Label>{label}</Label>
-        <Button
-          label="Delete"
-          backgroundColor="#FF1744"
-          hoverColor="#F01440"
-          onClick={onDelete}
-        />
-      </Container>
-    );
-  }
+export const ToDoItem = ({id, label, onDelete}: Props) => {
+  return(
+    <Container>
+      <Label
+        to={`/detail/${id}`}
+      >{label}</Label>
+      <Button
+        label="Delete"
+        backgroundColor="#FF1744"
+        hoverColor="#F01440"
+        onClick={onDelete}
+      />
+    </Container>
+  )
 }

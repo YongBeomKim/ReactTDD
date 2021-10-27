@@ -5,7 +5,7 @@
 - [Cannot use JSX unless the '--jsx' flag is provided](https://www.icatpark.com/entry/typescript-Cannot-use-JSX-unless-the-jsx-flag-is-provided)
 - [typed-css-modules](https://www.npmjs.com/package/typed-css-modules)
 
-<br/>
+<br>
 
 # package.json
 - [bj퍼블릭 GitHub](https://github.com/bjpublic/reactdd)
@@ -20,7 +20,7 @@ $ yarn add -D @testing-library/jest-dom@
 $ yarn add -D @babel/plugin-syntax-jsx
 ```
 
-<br/>
+<br>
 
 # JEST
 - JEST 테스트 함수 : `*.test.js` 를 자동으로 검색 후 실행
@@ -46,14 +46,14 @@ Test Suites: 1 passed, 1 total
 Done in 3.18s.
 ```
 
-<br/>
+<br>
 
 # React Testing Library 
 - [@testing-library/react](https://www.npmjs.com/package/@testing-library/react)
 - [Testing Library Docs](https://testing-library.com/docs/react-testing-library/setup/)
 - [Testing React Testing Library github](https://github.com/testing-library/react-testing-library)
 
-<br/>
+<br>
 
 # Styled Component
 - [Lint Staged 살펴보기](https://www.huskyhoochu.com/how-to-use-lint-staged/)
@@ -61,12 +61,17 @@ Done in 3.18s.
 - [Syntax Highlighting is default import is `styled` and nothing else](https://github.com/styled-components/vscode-styled-components)
 - vscode 에서 `import styled` 소문자로 불러와야 highlighting and IntelliSense 작동된다
 
-<br/>
+<br>
 
 # Props 와 State
 - [Void : undefined 를 호출하는 함수](https://m.blog.naver.com/skydoor2014/221141848372)
 
-<br/>
+<br>
+
+# React Router
+- [You should not use <Switch> outside a <Router> 해결 방법](https://hellowworlds.tistory.com/62)
+
+<br>
 
 # 스무디 한 잔 마시며 끝내는 리액트+TDD
 

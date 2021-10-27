@@ -14,6 +14,7 @@ urlpatterns = [
     path("api-word/", json_api),
     path("api-word/<int:pk>/", json_api_day),
     path('', IndexView.as_view(), name="home"),
+    re_path(r"\b(add|detail/[0-9]+)\b/", IndexView.as_view()),
     re_path(r"\b(create_word|day|day/[0-9]+)\b/", IndexView.as_view()),
 ]
 

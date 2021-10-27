@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import Styled from 'styled-components';
-import { Switch, Route } from 'react-router-dom';
-import { InputContainer, ToDoList } from './Components';
+import { InputContainer, PageHeader, ToDoList } from './Components';
 import { ToDoListProvider } from './Contexts';
+import { Add, List, Detail, NotFound } from './Pages';
 
 
 const Container = Styled.div`
@@ -24,43 +25,29 @@ const Contents = Styled.div`
 `;
 
 
-// State : useState 활용 변수들 정의b 
-interface Props {}
-interface State {
-  readonly toDo: string;
-  readonly toDoList: string[]; 
-}
-
-export default function App() {
-
-  // toDo : Events 변수
-  // toDoList : Event History 저장 객체
-  const [toDo, setToDo] = useState('');
-  const [toDoList, setToDoList] = useState<string[]>([]);
-
-  const addToDo = (): void => {
-    if (toDo) {
-      setToDoList([...toDoList, toDo]);
-      setToDo('');
-    }
-  };
-
-  const deleteToDo = (index: number): void => {
-    let list = [...toDoList];
-    list.splice(index, 1);
-    setToDoList(list);
-  };
-  
+export default function App() {  
   return(
-    <ToDoListProvider>
-      <Container>
-        <Contents>
-          <ToDoList />
-          <InputContainer />
-        </Contents>
-      </Container>
-    </ToDoListProvider>
+    <BrowserRouter>
+      <ToDoListProvider>
+        <Container>
+          <PageHeader />
+          <Switch>
+            <Route exact path="/">
+              <List />
+            </Route>
+            <Route exact path="/add">
+              <Add />
+            </Route>
+            {/* :id : URL 매개변수 추가 */}
+            <Route path ="/detail/:id">
+              <Detail></Detail>
+            </Route>
+            <Route>
+              <NotFound />
+            </Route>
+          </Switch>
+        </Container>
+      </ToDoListProvider>
+    </BrowserRouter>
   )
 }
-
-
