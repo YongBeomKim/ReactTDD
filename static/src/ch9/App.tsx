@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Styled from 'styled-components';
+import { Switch, Route } from 'react-router-dom';
 import { InputContainer, ToDoList } from './Components';
 import { ToDoListProvider } from './Contexts';
 
@@ -23,7 +24,33 @@ const Contents = Styled.div`
 `;
 
 
-export default function App() {  
+// State : useState 활용 변수들 정의b 
+interface Props {}
+interface State {
+  readonly toDo: string;
+  readonly toDoList: string[]; 
+}
+
+export default function App() {
+
+  // toDo : Events 변수
+  // toDoList : Event History 저장 객체
+  const [toDo, setToDo] = useState('');
+  const [toDoList, setToDoList] = useState<string[]>([]);
+
+  const addToDo = (): void => {
+    if (toDo) {
+      setToDoList([...toDoList, toDo]);
+      setToDo('');
+    }
+  };
+
+  const deleteToDo = (index: number): void => {
+    let list = [...toDoList];
+    list.splice(index, 1);
+    setToDoList(list);
+  };
+  
   return(
     <ToDoListProvider>
       <Container>

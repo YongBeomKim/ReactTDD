@@ -43,7 +43,7 @@ const ToDoListProvider = ({children}: Props): JSX.Element => {
     setToDoList(list);
   };
 
-  // useEffect :: componentDidMount(초기) 와 componentDidUpdate (갱신) 역활
+  // useEffect :: componentDidMount 와 동일한 역활을 수행
   // localStorage :: String 데이터 저장, 객체 변환시 JSON 인코딩 필요
   useEffect(() => {
     const list = localStorage.getItem('ToDoList');
